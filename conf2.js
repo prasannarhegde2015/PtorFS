@@ -1,0 +1,20 @@
+// conf.js
+var HtmlReporter = require('protractor-beautiful-reporter');
+var reporter = new HtmlReporter({
+   baseDirectory: 'Report', gatherBrowserLogs: false, takeScreenShotsOnlyForFailedSpecs: true , docTitle: 'Foresite POP'
+});
+
+exports.config = {
+  framework: 'jasmine',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  specs: ['ForesiteTest.js'],
+  
+  
+  onPrepare: function() {
+      // Add a screenshot reporter and store screenshots
+      jasmine.getEnv().addReporter(new HtmlReporter({
+         baseDirectory: 'Report'
+      }).getJasmine2Reporter());
+   }
+   
+}

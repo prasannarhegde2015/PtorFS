@@ -1,0 +1,22 @@
+var wellname=element(by.id('wellName'));
+	sendtext(wellname, "RPOC_0001");
+ //   element(by.id('wellName')).sendKeys('RPOC_0001');
+	
+	// Well Type: 
+	element(by.id('wellType')).click();
+	browser.sleep(1000);
+	element(by.cssContainingText('li', 'RRL')).click();	
+	element(by.id('scadaType')).click();
+	browser.sleep(1000);
+	element(by.cssContainingText('li', 'CygNet')).click();
+	browser.sleep(1000);
+    element(by.id('cygNetDomain')).click();
+	browser.sleep(1000);
+	browser.actions().mouseMove(element(by.cssContainingText('li', '9077'))).click().perform();
+	browser.sleep(1000);
+	element(by.id('siteService')).click();
+	browser.sleep(3000);
+    element(by.cssContainingText('li', '.UIS')).click();
+	browser.sleep(3000);
+	browser.actions().mouseMove(element(by.id('facilityId'))).click().perform();
+	browser.sleep(3000);
